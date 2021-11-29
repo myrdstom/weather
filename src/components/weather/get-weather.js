@@ -5,22 +5,41 @@ const GetWeather = ({ weatherData }) => {
   const {
     name,
     weather,
-    main: { temp_max, temp_min, temp }
+    main: { temp, humidity, pressure },
+    wind: { speed }
   } = weatherData;
-  const { icon } = weather[0];
+  const { icon, main } = weather[0];
   const imgSrc = `${weatherUrl}${icon}.png`;
   return (
-    <div>
-      <h1>{name}</h1>
-      <div className="temp">{Math.round(temp - 273.15)}&deg;C</div>
-      <div className="icon">
-        <img src={imgSrc} alt="Another alternate" />
+    <div className="img-area-front">
+      <h5 data-testid="city-name" className="location">
+        {name}
+      </h5>
+      <div className="weather-desc">
+        <span>{main}</span>
       </div>
-      <div>
-        <span>{Math.round(temp_max - 273.15)}&deg;C</span>
-        &nbsp; &nbsp; &nbsp;
-        <span>{Math.round(temp_min - 273.15)}&deg;C</span>
-      </div>
+      {}
+      <ul className="weather-block-info">
+        <li>
+          <p className="temperature">{Math.round(temp - 273.15)}</p>
+        </li>
+        <li>
+          <img className="icon" src={imgSrc} alt="" />
+        </li>
+        <li>
+          <ul className="weather-params">
+            <li>
+              <i className="climacon thermometer medium-high" /> <span>{pressure} mm Hg</span>
+            </li>
+            <li>
+              <i className="climacon moon full" /> <span>{humidity}% humidity</span>
+            </li>
+            <li>
+              <i className="climacon wind" /> <span>{speed}m/s NW</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
   );
 };

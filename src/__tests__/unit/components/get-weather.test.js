@@ -7,9 +7,8 @@ import { city } from "../../__fixtures__/weatherData";
 describe("Get Weather", () => {
   afterEach(cleanup);
   test("It should test the lifecycle for getting the weather data for a city", async () => {
-    const { getByTestId, getByLabelText } = render(<GetWeatherView />);
+    const { getByLabelText } = render(<GetWeatherView />);
 
-    expect(getByTestId("weather-title")).toHaveTextContent("View your City Weather");
     const input = getByLabelText("city-input");
 
     fireEvent.change(input, { target: { value: city } });

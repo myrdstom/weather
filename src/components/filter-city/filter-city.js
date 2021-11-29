@@ -1,12 +1,10 @@
 import React from "react";
+import "./filterCity.css";
 
-const FilterCity = ({ city, handleChange, handleKeyPress }) => (
+const FilterCity = ({ city, handleChange, handleKeyDown }) => (
   <div>
     <div id="myForm">
       <div className="form-group">
-        <label data-testid="weather-title" htmlFor="username">
-          View your City Weather
-        </label>
         <input
           type="text"
           aria-label="city-input"
@@ -15,8 +13,8 @@ const FilterCity = ({ city, handleChange, handleKeyPress }) => (
           name="city"
           value={city}
           onChange={handleChange}
-          onKeyDown={handleKeyPress}
-          id="username"
+          onKeyDown={handleKeyDown}
+          id="city"
           required
         />
       </div>
