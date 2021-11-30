@@ -22,8 +22,8 @@ const GetWeatherView = () => {
         <div className="main-wrapper-mask" />
         <div className="main-wrapper-blur" />
         <div className="main-wrapper-front">
+          <FilterCity city={city} handleChange={handleChange} handleKeyDown={handleKeyDown} />
           <div className="full-center">
-            <FilterCity city={city} handleChange={handleChange} handleKeyDown={handleKeyDown} />
             <br />
             <div className="widget-block">
               <div className="img-area">
