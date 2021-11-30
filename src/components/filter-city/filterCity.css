@@ -1,0 +1,21 @@
+#myForm {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#city {
+    background-color: #d6d2d2;
+    opacity: 0.4;
+    outline: currentColor none 0;
+    border: 0 none;
+    border-radius: 0.25rem;
+    max-width: 200px;
+    margin: 0 auto;
+    padding: 1rem;
+    color: black;
+    font-family: 'Poppins', helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+}
